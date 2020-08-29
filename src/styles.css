@@ -1,0 +1,191 @@
+body {
+  font-family: sans-serif;
+  background: #006e34;
+}
+
+:root {
+  --spacing: 12px;
+  --duration: 1s;
+  --bezier: cubic-bezier(0.5, 0, 0.75, 0);
+  --direction: 1;
+  --fill: forwards;
+  --opacity: 0;
+  --factor1: 0.6;
+  --factor2: 0.75;
+  --factor3: 1;
+}
+
+.rect {
+  width: 8px;
+  height: 8px;
+  margin-right: 10px;
+  background: white;
+  position: absolute;
+}
+
+.wrapper {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  margin: 0 auto;
+}
+
+.one {
+  left: 0;
+}
+
+.two {
+  left: calc(var(--spacing) * -2);
+  animation: anim2 calc(var(--duration) * var(--factor1)) var(--direction)
+    var(--fill);
+  animation-timing-function: var(--bezier);
+}
+
+.three {
+  left: calc(var(--spacing) * -4);
+  animation: anim3 calc(var(--duration) * var(--factor2)) var(--direction)
+    var(--fill);
+  animation-timing-function: var(--bezier);
+}
+
+.four {
+  left: calc(var(--spacing) * 2);
+  animation: anim4 calc(var(--duration) * var(--factor1)) var(--direction)
+    var(--fill);
+  animation-timing-function: var(--bezier);
+}
+
+.five {
+  left: calc(var(--spacing) * 4);
+  animation: anim5 calc(var(--duration) * var(--factor2)) var(--direction)
+    var(--fill);
+  animation-timing-function: var(--bezier);
+}
+
+.six {
+  left: calc(var(--spacing) * 6);
+  animation: anim6 calc(var(--duration) * var(--factor3)) var(--direction)
+    var(--fill);
+  animation-timing-function: var(--bezier);
+}
+
+.seven {
+  left: calc(var(--spacing) * -6);
+  animation: anim7 calc(var(--duration) * var(--factor3)) var(--direction)
+    var(--fill);
+  animation-timing-function: var(--bezier);
+}
+
+.delay1 {
+  animation-delay: 0.15s;
+}
+.delay2 {
+  animation-delay: 0.3s;
+}
+.delay2 {
+  animation-delay: 0.45s;
+}
+
+.red {
+  background: #e2001a;
+  z-index: 9999;
+}
+
+.line1 {
+  top: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.line2 {
+  top: calc(var(--spacing) * 2);
+  position: absolute;
+  width: 100%;
+}
+
+.line3 {
+  top: calc(var(--spacing) * 4);
+  position: absolute;
+  width: 100%;
+}
+
+@keyframes anim7 {
+  from {
+    left: calc(var(--spacing) * -6);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  to {
+    left: 0;
+    opacity: var(--opacity);
+    filter: blur(2px);
+  }
+}
+
+@keyframes anim6 {
+  from {
+    left: calc(var(--spacing) * 6);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  to {
+    left: 0;
+    opacity: var(--opacity);
+    filter: blur(2px);
+  }
+}
+
+@keyframes anim5 {
+  from {
+    left: calc(var(--spacing) * 4);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  to {
+    left: 0;
+    opacity: var(--opacity);
+    filter: blur(2px);
+  }
+}
+
+@keyframes anim4 {
+  from {
+    left: calc(var(--spacing) * 2);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  to {
+    left: 0;
+    opacity: var(--opacity);
+    filter: blur(2px);
+  }
+}
+
+@keyframes anim3 {
+  from {
+    left: calc(var(--spacing) * -4);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  to {
+    left: 0;
+    opacity: var(--opacity);
+    filter: blur(2px);
+  }
+}
+
+@keyframes anim2 {
+  from {
+    left: calc(var(--spacing) * -2);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  to {
+    left: 0;
+    opacity: var(--opacity);
+    filter: blur(2px);
+  }
+}
